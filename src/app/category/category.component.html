@@ -8,10 +8,10 @@
 
 <div class="d-flex justify-content-center"  >
     <div class="form1 col-md-12">
-        <form class="row g-2" action=""  >
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="row g-2"  >
 
             <div class="col-md-8 form-group" >
-                <input type="text" placeholder="Add New Categories here" name="categoryName" class="form-control drop-shadow">
+                <input type="text" placeholder="Add New Categories here" name="categoryName" class="form-control drop-shadow" ngModel>
             </div>
 
             <button type="submit" class="btn btn-primary col-md-2 btn-todo btn-block drop-shadow">Add</button>
