@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoryService } from '../service/category.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-category',
@@ -10,7 +11,7 @@ export class CategoryComponent {
 
   color: Array<any> = ['#6F61C0','#A084E8' , '#D5FFE4' , '#FFDDCC']
 
-  constructor(private categoryServise:CategoryService){}
+  constructor(private categoryServise:CategoryService , private tosterService: ToastrService){}
 
   onSubmit(f:any){
 
@@ -24,6 +25,7 @@ export class CategoryComponent {
 
     this.categoryServise.saveCategory(todoCategory)
     console.log(f.value);
+    this.tosterService.success("saved")
     
   }
 
